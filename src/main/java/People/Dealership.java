@@ -14,6 +14,11 @@ public class Dealership {
         this.vehiclesForSale = vehiclesForSale;
     }
 
+    public void buyCar(Vehicle vehicle){
+        this.till+=vehicle.getPrice();
+        this.vehiclesForSale.add(vehicle);
+    }
+
     public void sellCarBasedOnEngineType(Customer customer, Boolean fuelBased, Boolean electricBased){
         for(Vehicle vehicle: this.vehiclesForSale){
             IEngine engine= vehicle.getEngine();
