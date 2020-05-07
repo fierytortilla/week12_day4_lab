@@ -22,18 +22,10 @@ public class Dealership {
     public void sellCarBasedOnEngineType(Customer customer, Boolean fuelBased, Boolean electricBased){
         for(Vehicle vehicle: this.vehiclesForSale){
             IEngine engine= vehicle.getEngine();
-            if(engine.isElectricBased()==electricBased && engine.isFuelBased()==fuelBased){
+            if(engine.isElectricBased()==electricBased && engine.isFuelBased()==fuelBased) {
                 vehiclesForSale.remove(vehicle);
                 customer.buyCar(vehicle);
-                till+=vehicle.getPrice();
-            } else if(engine.isElectricBased()==electricBased && engine.isFuelBased()!=fuelBased){
-                vehiclesForSale.remove(vehicle);
-                customer.buyCar(vehicle);
-                till+=vehicle.getPrice();
-            } else {
-                vehiclesForSale.remove(vehicle);
-                customer.buyCar(vehicle);
-                till+=vehicle.getPrice();
+                till += vehicle.getPrice();
             }
         }
 
